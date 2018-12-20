@@ -3,25 +3,29 @@ package com.abdelazim.x.signin_firebase_mvp.Utils;
 import android.support.annotation.NonNull;
 
 import com.abdelazim.x.signin_firebase_mvp.signin.SignInContract;
-import com.google.android.gms.tasks.OnFailureListener;
+//hold firebase
+/*import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuth;*/
 
 public class AuthManager {
 
     private SignInContract.ModelCallbacks modelCallbacks;
-    private FirebaseAuth firebaseAuth;
+
+    //hold firebase
+    //private FirebaseAuth firebaseAuth;
 
     public AuthManager(SignInContract.ModelCallbacks modelCallbacks) {
 
         this.modelCallbacks = modelCallbacks;
-        firebaseAuth = FirebaseAuth.getInstance();
+        //hold firebase
+        //firebaseAuth = FirebaseAuth.getInstance();
     }
 
     public void signIn(String email, String password) {
-
-        firebaseAuth.signInWithEmailAndPassword(email, password)
+//hold firebase
+        /*firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
@@ -33,12 +37,12 @@ public class AuthManager {
                     public void onFailure(@NonNull Exception e) {
                         modelCallbacks.onSignInFailure(e.getMessage());
                     }
-                });
+                });*/
     }
 
     public void register(final String email, final String password, final String userName, final String phoneNumber) {
-
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
+//hold firebase
+        /*firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
@@ -50,6 +54,6 @@ public class AuthManager {
                     public void onFailure(@NonNull Exception e) {
                         modelCallbacks.onRegisterFailure(e.getMessage());
                     }
-                });
+                });*/
     }
 }
